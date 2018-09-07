@@ -114,7 +114,7 @@ class FormElement extends ZendFormElementViewHelper implements TranslatorAwareIn
 
         // Addon append
         if ($aAddOnAppend = $oElement->getOption('add-on-append')) {
-            $sMarkup .= $this->renderAddOn($aAddOnAppend);
+            $sMarkup .= $this->renderAddOn($aAddOnAppend,'append');
         }
 
         if ($aAddOnAppend || $aAddOnPrepend) {
