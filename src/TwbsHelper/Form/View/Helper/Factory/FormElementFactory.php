@@ -45,6 +45,9 @@ class FormElementFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $oContainer, $sRequestedName, array $aOptions = null)
     {
+        if (method_exists($oContainer, 'getServiceLocator')) {
+		    $oContainer = $oContainer->getServiceLocator() ?: $oContainer;
+	    }
         $oOptions = $oContainer->get(ModuleOptions::class);
 
         return new FormElement($oOptions);
