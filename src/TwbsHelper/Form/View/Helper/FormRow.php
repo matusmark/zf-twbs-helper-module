@@ -343,6 +343,7 @@ class FormRow extends ZendFormRowViewHelper
 
             case Form::LAYOUT_HORIZONTAL:
                 $sElementContent = $this->getElementHelper()->render($oElement) . $this->renderHelpBlock($oElement);
+                $sElementContent = sprintf($sElementContent, '');
 
                 // Render errors
                 if ($this->renderErrors) {
